@@ -36,16 +36,16 @@ public class ProductController {
 
     @GetMapping() // localhost:8080/products
     //V1
-//    public ResponseEntity<List<Product>> getAllProducts() {
-    public ResponseEntity<List<Product>> getAllProducts(@RequestHeader("AuthenticationToken") String token) {
+    public ResponseEntity<List<Product>> getAllProducts() {
+//    public ResponseEntity<List<Product>> getAllProducts(@RequestHeader("AuthenticationToken") String token) {
 //        restTemplate.delete(null);
 
-        //V1
-        UserDto userDto = authenticationCommons.validateToken(token);
-
-        if (userDto == null) {
-            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
-        }
+        //V0
+//        UserDto userDto = authenticationCommons.validateToken(token);
+//
+//        if (userDto == null) {
+//            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+//        }
 
 //        boolean isAdmin = false;
 //
