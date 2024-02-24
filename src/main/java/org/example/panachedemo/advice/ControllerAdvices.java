@@ -36,6 +36,6 @@ public class ControllerAdvices {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ExceptionDto> genericException(Exception e) {
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

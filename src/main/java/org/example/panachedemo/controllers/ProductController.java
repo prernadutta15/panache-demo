@@ -1,8 +1,6 @@
 package org.example.panachedemo.controllers;
 
 import org.example.panachedemo.commons.AuthenticationCommons;
-import org.example.panachedemo.dtos.Role;
-import org.example.panachedemo.dtos.UserDto;
 import org.example.panachedemo.exception.ProductNotFoundException;
 import org.example.panachedemo.models.Product;
 import org.example.panachedemo.services.ProductService;
@@ -14,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +35,7 @@ public class ProductController {
 
     @GetMapping() // localhost:8080/products
     //V1
-    public ResponseEntity<List<Product>> getAllProducts() {
+    public ResponseEntity<List<Product>> getAllProducts(Principal principal) {
 //    public ResponseEntity<List<Product>> getAllProducts(@RequestHeader("AuthenticationToken") String token) {
 //        restTemplate.delete(null);
 
@@ -57,8 +56,9 @@ public class ProductController {
 //        }
 //
 //        if (!isAdmin) return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        List<Product> products = productService.getAllProducts();
 
+        System.out.println(principal.getName());
+        List<Product> products = productService.getAllProducts();
         List<Product> finalProducts = new ArrayList<>();
 
         for (Product p: products) { // o  p q
