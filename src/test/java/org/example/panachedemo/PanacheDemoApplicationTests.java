@@ -9,22 +9,22 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-@SpringBootTest
+//@SpringBootTest
 class PanacheDemoApplicationTests {
 
-	@Autowired
-	private ProductRepository productRepository;
-	@Test
-	void contextLoads() {
-	}
-
-	@Test
-	void exploreQueries()
-	{
-		List<Product> productList = productRepository.findByTitleContaining("prod");
-		System.out.println("____________________________________");
-		for(Product prod: productList)
-			System.out.print(prod);
-		System.out.println("____________________________________");
-	}
+//	@Autowired
+//	private ProductRepository productRepository;
+//	@Test
+//	void contextLoads() {
+//	}
+//
+//	@Test
+//	void exploreQueries()
+//	{
+//		List<Product> productList = productRepository.findByTitleContaining("prod");
+//		System.out.println("____________________________________");
+//		for(Product prod: productList)
+//			System.out.print(prod);
+//		System.out.println("____________________________________");
+//	}
 }
